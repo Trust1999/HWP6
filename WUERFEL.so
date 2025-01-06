@@ -1,0 +1,35 @@
+CSIM(WM): CUPL Simulation Program
+Version 5.0a Serial# 
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+CREATED Mon Jan 06 16:10:03 2025
+
+LISTING FOR SIMULATION FILE: wuerfel.si
+
+   1: Name     wuerfel;
+   2: PartNo   00;
+   3: Date     06.01.2025;
+   4: Revision 01;
+   5: Designer Engineer;
+   6: Company  Atmel;
+   7: Assembly None;
+   8: Location ;
+   9: Device   g16v8;
+  10: 
+  11: 
+  12: ORDER: CL, RE, Q0; 
+  13: 
+  14: 
+
+============
+      CRQ   
+      LE0   
+============
+0001: 00H
+0002: 10H
+0003: 00H
+0004: 10H
+0005: 01H
+0006: 00H
+0007: 00H
+0008: 10H
+0009: 00H

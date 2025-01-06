@@ -1,0 +1,33 @@
+Name     wuerfel ;
+PartNo   00 ;
+Date     06.01.2025 ;
+Revision 01 ;
+Designer Engineer ;
+Company  Atmel ;
+Assembly None ;
+Location  ;
+Device   g16v8 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1 = CL;
+PIN 2 = RE;
+PIN 3 = A ; /* */
+PIN 4 = B ; /* */
+PIN 5 = C ; /* */
+PIN 6 = D ; /* */
+
+/* *************** OUTPUT PINS *********************/
+PIN 19 = W ; /* */
+PIN 18 = X ; /* */
+PIN 16 = Y ; /* */
+PIN 15 = Z ; /* */
+PIN 14 = Q0 ; /* */
+
+W = A;
+X = B;
+Y = C;
+Z = D;
+Q0.d = !RE;
+
+/* *********************************************** */
+

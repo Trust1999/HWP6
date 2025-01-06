@@ -1,0 +1,24 @@
+Name     wuerfel;
+PartNo   00;
+Date     06.01.2025;
+Revision 01;
+Designer Engineer;
+Company  Atmel;
+Assembly None;
+Location ;
+Device   g16v8;
+
+
+ORDER: CL, RE, Q0; 
+
+
+VECTORS:
+00*
+10*
+00*
+10*
+01*
+00*
+01*
+10*
+00*

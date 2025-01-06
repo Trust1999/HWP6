@@ -1,0 +1,46 @@
+%SIGNAL
+PIN   3 =  A 
+PIN   4 =  B 
+PIN   5 =  C 
+PIN   1 =  CL 
+PIN   6 =  D 
+PIN  14 =  Q0 
+PIN   2 =  RE 
+PIN  19 =  W 
+PIN  18 =  X 
+PIN  16 =  Y 
+PIN  15 =  Z 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+Q0.d  =>
+    !RE
+
+W =>
+    A
+
+X =>
+    B
+
+Y =>
+    C
+
+Z =>
+    D
+
+W.oe  =>
+    1 
+
+X.oe  =>
+    1 
+
+Y.oe  =>
+    1 
+
+Z.oe  =>
+    1 
+
+%END

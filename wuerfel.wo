@@ -1,0 +1,24 @@
+#WAVEFORM
+#H Name     wuerfel;
+#H PartNo   00;
+#H Date     06.01.2025;
+#H Revision 01;
+#H Designer Engineer;
+#H Company  Atmel;
+#H Assembly None;
+#H Location ;
+#H Device   g16v8;
+#H 
+#H 
+#H ORDER: CL, RE, Q0; 
+#H 
+#H 
+#V 0001 00H
+#V 0002 10H
+#V 0003 00H
+#V 0004 10H
+#V 0005 01H
+#V 0006 00H
+#V 0007 00H
+#V 0008 10H
+#V 0009 00H
