@@ -1,0 +1,27 @@
+Name     HWP6_2 ;
+PartNo   00 ;
+Date     07.01.2025 ;
+Revision 01 ;
+Designer User ;
+Company  HTWK ;
+Assembly None ;
+Location  ;
+Device   g16v8 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1 = clock ;
+PIN 2 = Z ;
+
+/* *************** OUTPUT PINS *********************/
+PIN 15 = E ;
+PIN 16 = A ;
+PIN 17 = B ;
+PIN 18 = C ;
+PIN 19 = D ;
+
+/*****LOGIC*******/
+E.d=(Z&(!E&!A))#!Z;
+D.d=(Z&(!D#(!E&!A)))#(!Z&!D);
+C.d=(Z&(E#(C&!D)))#(!Z&(!A#(C&!D)));
+B.d=(Z&(E#(!B&C)))#(!Z&(!A#(!B&C)));
+A.d=(Z&(B#E#(A&D)))#(!Z&(D#B));
