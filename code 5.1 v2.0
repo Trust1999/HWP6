@@ -1,0 +1,49 @@
+Name     NAME ;
+PartNo   00 ;
+Date     07.01.2025 ;
+Revision 01 ;
+Designer User ;
+Company  HTWK ;
+Assembly None ;
+Location  ;
+Device   g16v8 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1 = clock ;
+PIN 2 = Z ;
+
+/* *************** OUTPUT PINS *********************/
+PIN 15 = E ;  // Sonderstatus fuer doppelte 6
+PIN 16 = A ;  // LED A
+PIN 17 = B ;  // LED B
+PIN 18 = C ;  // LED C
+PIN 19 = D ;  // LED D
+
+/*****LOGIC*******/
+/*E: Sonderstatus fuer doppelte 6*/
+E.d = (Z & A & B & C & !D) # (!Z & E & !(A & B & C & !D));
+
+/*Zustaende D, C, B, A*/
+D.d = (!D & !C & !B & !A) #  /*Zustand 1 -> 2*/
+       (!D & !C &  B & !A) #  /*Zustand 2 -> 3*/
+       (!D &  C &  B & !A) #  /*Zustand 4 -> 5*/
+       ( D &  C &  B & !A) #  /*Zustand 6 -> 1*/
+       (Z & A & B & C & !D);  /*Halten bei Zustand 6, wenn Z=1*/
+
+C.d = (!C &  B & !A & !D) #  /*Zustand 3 -> 4*/
+       ( C &  B & !A & !D) #  /*Zustand 5 -> 6*/
+       (!Z & !C & !B & !A & D); /*Reset zu 1 wenn Z=0*/
+
+B.d = (!B & !A & !C & !D) #  /*Zustand 1 -> 2*/
+       ( B & !A & !C & !D) #  /*Zustand 3 -> 4*/
+       ( B &  C & !A & !D) #  /*Zustand 5 -> 6*/
+       (!Z & !B & !A & !C & D); /*Reset zu 1 wenn Z=0*/
+
+A.d = ( A & !D) #            /*Halten bei 6*/
+       (!A &  D & !C & !B);  /*Zustand 5 -> 6*/
+
+/*E.d=(Z&(!E&!A))#!Z;
+D.d=(Z&(!D#(!E&!A)))#(!Z&!D);
+C.d=(Z&(E#(C&!D)))#(!Z&(!A#(C&!D)));
+B.d=(Z&(E#(!B&C)))#(!Z&(!A#(!B&C)));
+A.d=(Z&(B#E#(A&D)))#(!Z&(D#B));*/
