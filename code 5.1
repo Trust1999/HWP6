@@ -1,4 +1,4 @@
-Name     HWP6_2 ;
+Name     hwp12345 ;
 PartNo   00 ;
 Date     07.01.2025 ;
 Revision 01 ;
@@ -10,18 +10,18 @@ Device   g16v8 ;
 
 /* *************** INPUT PINS *********************/
 PIN 1 = clock ;
-PIN 2 = Z ;
+PIN 2 = S ; /*S = Schummeln*/
 
 /* *************** OUTPUT PINS *********************/
-PIN 15 = E ;
-PIN 16 = A ;
-PIN 17 = B ;
-PIN 18 = C ;
-PIN 19 = D ;
+PIN 15 = E ; /*E = Mehr Sechsen*/
+PIN 16 = D ;
+PIN 17 = C ;
+PIN 18 = B ;
+PIN 19 = A ;
 
 /*****LOGIC*******/
-E.d=(Z&(!E&!A))#!Z;
-D.d=(Z&(!D#(!E&!A)))#(!Z&!D);
-C.d=(Z&(E#(C&!D)))#(!Z&(!A#(C&!D)));
-B.d=(Z&(E#(!B&C)))#(!Z&(!A#(!B&C)));
-A.d=(Z&(B#E#(A&D)))#(!Z&(D#B));
+E.d=(S&(!E&!A))#!S;
+D.d=(S&(!D#(!E&!A)))#(!S&!D);
+C.d=(S&(E#(C&!D)))#(!S&(!A#(C&!D)));
+B.d=(S&(E#(!B&C)))#(!S&(!A#(!B&C)));
+A.d=(S&(B#E#(A&D)))#(!S&(D#B));
